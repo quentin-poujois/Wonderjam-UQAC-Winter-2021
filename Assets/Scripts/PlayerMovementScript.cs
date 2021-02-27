@@ -12,6 +12,7 @@ public class PlayerMovementScript : MonoBehaviour
     public float speed = 5.0f;
     int nbProofFound;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +37,8 @@ public class PlayerMovementScript : MonoBehaviour
     {
         if (collision.collider.tag == "Monster")
         {
-            SceneManager.LoadScene("LostGame");
+            ApplicationModel.ending = 0;
+            SceneManager.LoadScene("EndGame");
         }
 
         //if collision avec la porte de sortie
@@ -44,7 +46,8 @@ public class PlayerMovementScript : MonoBehaviour
         {
             if (nbProofFound == 3)
             {
-                SceneManager.LoadScene("WinGame");
+                ApplicationModel.ending = 1;
+                SceneManager.LoadScene("EndGame");
             }
         }
 

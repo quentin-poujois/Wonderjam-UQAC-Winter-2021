@@ -8,7 +8,7 @@ public class MenuScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -21,4 +21,9 @@ public class MenuScript : MonoBehaviour
     {
         SceneManager.LoadScene(sceneToLoad);
     }
+}
+
+public class ApplicationModel
+{
+    static public int ending = 0;    // this is reachable from everywhere
 }
