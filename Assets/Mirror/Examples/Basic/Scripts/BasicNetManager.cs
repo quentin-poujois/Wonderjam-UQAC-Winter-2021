@@ -27,7 +27,7 @@ namespace Mirror.Examples.Basic
         public RectTransform playersPanel;
 
 
-        public Button boutonStart;
+        public GameObject boutonStart;
 
         /// <summary>
         /// Called on the server when a client adds a new player with ClientScene.AddPlayer.
@@ -59,13 +59,12 @@ namespace Mirror.Examples.Basic
                 player.playerNumber = playerNumber;
                 playerNumber++;
             }
-
-            if (playerNumber == 2 && !boutonStart.enabled)
+            if (playerNumber == 2 && NetworkServer.active)
             {
-                boutonStart.enabled = true;
-            } else if (playerNumber != 2 && boutonStart.enabled)
+                boutonStart.SetActive(true);
+            } else if (playerNumber != 2 && boutonStart.activeSelf)
             {
-                boutonStart.enabled = false;
+                boutonStart.SetActive(false);
             }
             playerNumberPublic = playerNumber;
         }
