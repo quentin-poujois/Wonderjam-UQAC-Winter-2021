@@ -25,6 +25,6 @@ public class PlayerMovementScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        body.velocity = new Vector3(horizontal * speed, 0,  vertical * speed);
+        body.velocity = new Vector3(horizontal, 0,  vertical).normalized * speed;
     }
 }
