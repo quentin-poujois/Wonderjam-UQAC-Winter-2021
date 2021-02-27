@@ -377,8 +377,8 @@ namespace Unity.RenderStreaming
 
             if (opRemoteSdp.IsError)
             {
-                Debug.LogError($"Network Error: {opRemoteSdp.Error.message}");
-                yield break;
+                Debug.LogWarning($"Network Error: {opRemoteSdp.Error.message}");
+                //yield break;
             }
         }
 
